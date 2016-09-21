@@ -16,6 +16,27 @@
 
 })(jQuery);
 
+$(document).scroll(function(){
+    $("#mypicture").css("display", "none");
+    $("#myname").removeClass("col-md-3");
+    $("#myname").addClass("col-md-6");
+    $("#myname h1").css("font-size","27px");
+    $("#myname p").css("display","none");
+    var scrollTop = $(window).scrollTop();
+    if ( scrollTop == 0 ){
+       $("#mypicture").css("display", "block");
+       $("#myname").removeClass("col-md-6");
+       $("#myname").addClass("col-md-3");
+       $("#myname h1").css("font-size","30px");
+       $("#myname p").css("display","block");
+    }
+});
                      
      
   
+    
+    console.log(scrollTop);
+    if (scrollTop > 20) {
+        alert('Show message');
+        $("#mypicture").css("display", "none");
+    }
